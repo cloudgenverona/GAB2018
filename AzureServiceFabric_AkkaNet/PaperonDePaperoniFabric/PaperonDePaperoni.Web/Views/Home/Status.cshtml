@@ -1,0 +1,64 @@
+﻿@model CurrentActorStateViewModel
+    <div class="panel panel-primary">
+        <div class="panel-heading">Protagonisti</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="~/images/ZioPaperone.jpg" class="img-rounded img-responsive center-block" width="100" />
+                        </div>
+                        <div class="col-md-6">
+                            <h2><span class="label label-primary">@Model.ZioPaperone</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="~/images/bandabassotti.png" class="img-rounded img-responsive center-block"  width="150" />
+                        </div>
+                        <div class="col-md-6">
+                            <h2><span class="label label-primary">@Model.BandaBassotti</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Discendenza</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/images/quiquoqua.jpg" class="img-rounded img-responsive center-block"  width="100" />
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>Qui</span>
+                        </div>
+                        <div class="col-md-6">
+                            <h2><span class="label label-primary">@Model.Qui.ToString("0.##")</span></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>Quo</span>
+                        </div>
+                        <div class="col-md-6">
+                            <h2><span class="label label-primary">@Model.Quo.ToString("0.##")</span></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>Qua</span>
+                        </div>
+                        <div class="col-md-6">
+                           <h2><span class="label label-primary">@Model.Qua.ToString("0.##")</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

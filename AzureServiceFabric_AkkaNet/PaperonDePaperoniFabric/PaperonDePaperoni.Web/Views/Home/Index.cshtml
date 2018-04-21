@@ -1,0 +1,38 @@
+﻿@model BankChangesViewModel
+@{
+    ViewData["Title"] = "Bank";
+}
+
+<form asp-action="Transactions" class="form-horizontal" role="form">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Banca</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="deposit">Deposito</span>
+                        <input type="text" class="form-control" asp-for="Deposit" placeholder="Deposito" aria-describedby="deposit" />
+                    </div>
+                    <span asp-validation-for="Deposit" class="text-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <img src="~/images/moneybin.jpg" class="img-rounded img-responsive center-block" width="170" />
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="withdraw">Prelievo</span>
+                        <input type="text" class="form-control" asp-for="Withdraw" placeholder="Prelievo" aria-describedby="withdraw" />
+                    </div>
+                    <span asp-validation-for="Withdraw" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-primary center-block" value="Aggiorna" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@await Html.PartialAsync("Status", @Model.CurrenteActorState)

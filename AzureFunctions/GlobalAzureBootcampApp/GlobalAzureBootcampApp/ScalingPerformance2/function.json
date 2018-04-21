@@ -1,0 +1,25 @@
+﻿{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "table",
+      "name": "instanceIds",
+      "tableName": "ScalingPerformanceIds2Minutes",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/GlobalAzureBootcampApp.dll",
+  "entryPoint": "GlobalAzureBootcampApp.ScalingPerformance2.Run"
+}

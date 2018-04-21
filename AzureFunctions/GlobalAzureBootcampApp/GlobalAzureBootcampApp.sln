@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalAzureBootcampApp", "GlobalAzureBootcampApp\GlobalAzureBootcampApp.csproj", "{1EE8B25D-EA14-4617-9D60-16D290C37719}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalAzureBootcampAppDurable", "GlobalAzureBootcampAppDurable\GlobalAzureBootcampAppDurable.csproj", "{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalAzureBootcampAppSetting", "GlobalAzureBootcampAppSetting\GlobalAzureBootcampAppSetting.csproj", "{D002C0DC-ABC6-454C-98DC-042C8F890733}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalAzureBootcampAppAttribute", "GlobalAzureBootcampAppAttribute\GlobalAzureBootcampAppAttribute.csproj", "{B69AB20D-0D66-406B-B75E-0B95E896236D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{F2315262-6912-4938-8A87-EC8748C4D2B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Durable", "Durable", "{561AF5C8-61D2-4BCB-9657-DE80F54B965E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Approval", "Approval", "{0C7979F1-0C81-44AD-B4E9-70A6E6D293F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalAzureBootcampAppApproval", "GlobalAzureBootcampAppApproval\GlobalAzureBootcampAppApproval.csproj", "{969F6728-916F-4D51-AC81-2D894D70B8B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EE8B25D-EA14-4617-9D60-16D290C37719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE8B25D-EA14-4617-9D60-16D290C37719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE8B25D-EA14-4617-9D60-16D290C37719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE8B25D-EA14-4617-9D60-16D290C37719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D002C0DC-ABC6-454C-98DC-042C8F890733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D002C0DC-ABC6-454C-98DC-042C8F890733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D002C0DC-ABC6-454C-98DC-042C8F890733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D002C0DC-ABC6-454C-98DC-042C8F890733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69AB20D-0D66-406B-B75E-0B95E896236D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69AB20D-0D66-406B-B75E-0B95E896236D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69AB20D-0D66-406B-B75E-0B95E896236D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69AB20D-0D66-406B-B75E-0B95E896236D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969F6728-916F-4D51-AC81-2D894D70B8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969F6728-916F-4D51-AC81-2D894D70B8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969F6728-916F-4D51-AC81-2D894D70B8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969F6728-916F-4D51-AC81-2D894D70B8B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FBD23CE-9CF9-4952-ADAA-7E3305D63C1D} = {561AF5C8-61D2-4BCB-9657-DE80F54B965E}
+		{D002C0DC-ABC6-454C-98DC-042C8F890733} = {F2315262-6912-4938-8A87-EC8748C4D2B4}
+		{B69AB20D-0D66-406B-B75E-0B95E896236D} = {F2315262-6912-4938-8A87-EC8748C4D2B4}
+		{969F6728-916F-4D51-AC81-2D894D70B8B0} = {0C7979F1-0C81-44AD-B4E9-70A6E6D293F3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {744D7395-DD88-4078-80F2-400B867FF599}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PaperonDePaperoni.QuoPkg" Version="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <ServiceTypes>
+    <StatefulServiceType ServiceTypeName="QuoActorServiceType">
+      <Extensions>
+        <Extension Name="__GeneratedServiceType__" GeneratedId="48433fae-b604-494a-a0ac-c6c0b657e9c1|Volatile">
+          <GeneratedNames xmlns="http://schemas.microsoft.com/2015/03/fabact-no-schema">
+            <DefaultService Name="QuoActorService" />
+            <ReplicatorEndpoint Name="QuoActorServiceReplicatorEndpoint" />
+            <ReplicatorConfigSection Name="QuoActorServiceReplicatorConfig" />
+            <ReplicatorSecurityConfigSection Name="QuoActorServiceReplicatorSecurityConfig" />
+            <StoreConfigSection Name="QuoActorServiceLocalStoreConfig" />
+            <ServiceEndpointV2 Name="QuoActorServiceEndpointV2" />
+          </GeneratedNames>
+        </Extension>
+      </Extensions>
+    </StatefulServiceType>
+  </ServiceTypes>
+  <CodePackage Name="Code" Version="1.0.0">
+    <EntryPoint>
+      <ExeHost>
+        <Program>PaperonDePaperoni.Quo.exe</Program>
+      </ExeHost>
+    </EntryPoint>
+  </CodePackage>
+  <ConfigPackage Name="Config" Version="1.0.0" />
+  <Resources>
+    <Endpoints>
+      <Endpoint Name="QuoActorServiceEndpointV2" />
+      <Endpoint Name="QuoActorServiceReplicatorEndpoint" />
+    </Endpoints>
+  </Resources>
+  <!-- The content will be generated during build -->
+</ServiceManifest>

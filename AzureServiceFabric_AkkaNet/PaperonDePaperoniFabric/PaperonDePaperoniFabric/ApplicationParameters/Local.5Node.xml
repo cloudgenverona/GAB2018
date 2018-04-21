@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/PaperonDePaperoniFabric" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="PaperonDePaperoni.Web_InstanceCount" Value="1" />
+    <Parameter Name="QuaActorService_PartitionCount" Value="1" />
+    <Parameter Name="QuiActorService_PartitionCount" Value="1" />
+    <Parameter Name="QuoActorService_PartitionCount" Value="1" />
+    <Parameter Name="BandaBassottiActorService_PartitionCount" Value="1" />
+    <Parameter Name="ZioPaperoneActorService_PartitionCount" Value="1" />
+    <Parameter Name="BankActorService_PartitionCount" Value="1" />
+  </Parameters>
+</Application>
