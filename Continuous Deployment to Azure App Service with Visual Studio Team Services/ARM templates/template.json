@@ -1,0 +1,239 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "webSiteName": {
+      "type": "string",
+      "minLength": 1,
+      "metadata": {
+        "description": "Name of the Azure Web app to create."
+      }
+    },
+    "skuName": {
+      "type": "string",
+      "defaultValue": "F1",
+      "allowedValues": [
+        "F1",
+        "D1",
+        "B1",
+        "B2",
+        "B3",
+        "S1",
+        "S2",
+        "S3",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "metadata": {
+        "description": "Describes plan's pricing tier and capacity. Check details at https://azure.microsoft.com/en-us/pricing/details/app-service/"
+      }
+    },
+    "skuCapacity": {
+      "type": "int",
+      "defaultValue": 1,
+      "minValue": 1,
+      "metadata": {
+        "description": "Describes plan's instance count"
+      }
+    },
+    "AppSetting_Value": {
+      "type": "string",
+      "metadata": {
+        "description": "My Application Setting value for Web App"
+      }
+    },
+    "stagingSlotName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "webtestGuid": {
+      "defaultValue": "40857d53-ddb9-4b94-a3c6-e63cd956eb60",
+      "type": "string",
+      "metadata": {
+        "description": "An arbitrary guid for the test"
+      }
+    },
+    "emails": {
+      "type": "array",
+      "metadata": {
+        "description": "A list of strings representing the email addresses to send alerts to."
+      }
+    }
+  },
+  "variables": {
+    "webTestName": "[concat(toLower(parameters('webSiteName')), '-webtest')]",
+    "alertRuleName": "[concat(variables('webTestName'), '-', subscription().subscriptionId)]",
+    "URL": "[concat('https://', parameters('webSiteName'), '.azurewebsites.net')]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-08-01",
+      "name": "[parameters('hostingPlanName')]",
+      "type": "Microsoft.Web/serverfarms",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "displayName": "HostingPlan"
+      },
+      "sku": {
+        "name": "[parameters('skuName')]",
+        "capacity": "[parameters('skuCapacity')]"
+      },
+      "properties": {
+        "name": "[parameters('hostingPlanName')]"
+      }
+    },
+    {
+      "apiVersion": "2015-08-01",
+      "name": "[parameters('webSiteName')]",
+      "type": "Microsoft.Web/sites",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "Resource",
+        "displayName": "Website"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+      ],
+      "properties": {
+        "name": "[parameters('webSiteName')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+      },
+      "resources": [
+        {
+          "name": "appsettings",
+          "type": "config",
+          "apiVersion": "2015-08-01",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites', parameters('webSiteName'))]"
+          ],
+          "tags": {
+            "displayName": "appsettings"
+          },
+          "properties": {
+            "myAppSetting": "[parameters('AppSetting_Value')]"
+          }
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "name": "[parameters('stagingSlotName')]",
+          "type": "slots",
+          "tags": {
+            "displayName": "staging slot"
+          },
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites', parameters('webSiteName'))]"
+          ],
+          "properties": {
+            "myAppSetting": "[parameters('AppSetting_Value')]"
+          },
+          "resources": []
+        }
+      ]
+    },
+    {
+      "apiVersion": "2014-04-01",
+      "name": "[parameters('webSiteName')]",
+      "type": "Microsoft.Insights/components",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites/', parameters('webSiteName'))]"
+      ],
+      "tags": {
+        "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('webSiteName'))]": "Resource",
+        "displayName": "AppInsightsComponent"
+      },
+      "properties": {
+        "applicationId": "[parameters('webSiteName')]"
+      }
+    },
+    {
+      "id": "[resourceId('Microsoft.Insights/webtests', variables('webTestName'))]",
+      "name": "[variables('webTestName')]",
+      "apiVersion": "2015-05-01",
+      "type": "microsoft.insights/webtests",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('webSiteName')))]": "Resource",
+        "[concat('hidden-link:', resourceId('Microsoft.Web/sites', parameters('webSiteName')))]": "Resource"
+      },
+      "kind": null,
+      "dependsOn": [
+        "[concat('microsoft.insights/components/', parameters('webSiteName'))]"
+        ],
+      "properties": {
+          "SyntheticMonitorId": "[variables('webTestName')]",
+        "Name": "[parameters('webSiteName')]",
+        "Description": "",
+        "Enabled": true,
+        "Frequency": 300,
+        "Timeout": 30,
+        "Kind": "ping",
+        "RetryEnabled": true,
+        "Locations": [
+          {
+            "Id": "emea-nl-ams-azr"
+          },
+          {
+            "Id": "apac-sg-sin-azr"
+          },
+          {
+            "Id": "emea-ch-zrh-edge"
+          },
+          {
+            "Id": "us-va-ash-azr"
+          },
+          {
+            "Id": "apac-hk-hkn-azr"
+          }
+        ],
+        "Configuration": {
+          "WebTest": "[concat('<WebTest Name=\"', parameters('webSiteName') , '\"',  ' Id=\"', parameters('webtestGuid') ,'\"    Enabled=\"True\" CssProjectStructure=\"\" CssIteration=\"\" Timeout=\"30\" WorkItemIds=\"\" xmlns=\"http://microsoft.com/schemas/VisualStudio/TeamTest/2010\" Description=\"\" CredentialUserName=\"\" CredentialPassword=\"\" PreAuthenticate=\"True\" Proxy=\"default\" StopOnError=\"False\" RecordedResultFile=\"\" ResultsLocale=\"\">        <Items>        <Request Method=\"GET\" Guid=\"a5f10126-e4cd-570d-961c-cea43999a200\" Version=\"1.1\" Url=\"', variables('URL') ,'\" ThinkTime=\"0\" Timeout=\"30\" ParseDependentRequests=\"True\" FollowRedirects=\"True\" RecordResult=\"True\" Cache=\"False\" ResponseTimeGoal=\"0\" Encoding=\"utf-8\" ExpectedHttpStatusCode=\"200\" ExpectedResponseUrl=\"\" ReportingName=\"\" IgnoreHttpStatusCode=\"False\" /></Items></WebTest>')]"
+        },
+        "provisioningState": "Succeeded"
+      }
+  },
+  {
+      "name": "[variables('alertRuleName')]",
+      "apiVersion": "2015-04-01",
+      "type": "microsoft.insights/alertrules",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/components/', parameters('webSiteName')))]": "Resource",
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/webtests/', variables('webTestName')))]": "Resource"
+      },
+      "dependsOn": [
+        "[concat('microsoft.insights/webtests/', variables('webTestName'))]"
+        ],
+      "properties": {
+          "name": "[variables('alertRuleName')]",
+        "description": "alert rule",
+        "isEnabled": true,
+        "condition": {
+          "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.LocationThresholdRuleCondition, Microsoft.WindowsAzure.Management.Mon.Client",
+          "odata.type": "Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition",
+          "dataSource": {
+            "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.RuleMetricDataSource, Microsoft.WindowsAzure.Management.Mon.Client",
+            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+            "resourceUri": "[resourceId('microsoft.insights/webtests', variables('webTestName'))]",
+            "metricName": "GSMT_AvRaW"
+          },
+          "windowSize": "PT5M",
+          "failedLocationCount": 2
+        },
+        "action": {
+          "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.RuleEmailAction, Microsoft.WindowsAzure.Management.Mon.Client",
+          "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+          "sendToServiceOwners": false,
+          "customEmails": "[parameters('emails')]"
+        }
+      }
+  }
+  ]
+}

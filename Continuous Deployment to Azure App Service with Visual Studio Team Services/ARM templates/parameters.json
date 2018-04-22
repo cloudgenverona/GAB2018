@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "GAB-Plan"
+    },
+    "webSiteName": {
+      "value": "GAB-App-Dev"
+    },
+    "skuName": {
+      "value": "S1"
+    },
+    "AppSetting_Value": {
+      "value": "Global Azure Bootcamp 2018"
+    },
+    "stagingSlotName": {
+      "value": "staging"
+    },
+    "webtestGuid": { 
+      "value": "12a3d5c3-f81c-404c-957f-132781e6af83"
+    },
+    "emails": {
+      "value": [
+        "marco.piazzi@4ward.it"
+      ]
+    }
+  }
+}
