@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:GabDemo" x:Class="GabDemo.GabDemoPage" Title="GAB-Demo">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Welcome to Xamarin.Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Button Text="Send event" Clicked="OnSendEvent" />
+            <Button Text="Send crash" Clicked="OnCrash" />
+            <Button Text="Send handled ex" Clicked="OnHandledException" />
+            <Button Text="Go to tests" Clicked="NavigateToTestPage" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

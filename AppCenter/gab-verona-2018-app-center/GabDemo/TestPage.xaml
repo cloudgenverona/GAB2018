@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GabDemo.TestPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Customer list" FontSize="28" Margin="20" />
+
+            <ListView x:Name="CustomerList" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,8">
+                                <Label Text="{Binding FullName}" />
+                                <Label Text="{Binding CustomerId}" TextColor="#A9A9A9" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

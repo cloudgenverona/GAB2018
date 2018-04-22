@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "495215395979",
+    "firebase_url": "https://gabdemo2018.firebaseio.com",
+    "project_id": "gabdemo2018",
+    "storage_bucket": "gabdemo2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495215395979:android:e46f94c1538bf233",
+        "android_client_info": {
+          "package_name": "gabDemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495215395979-l6gngj3b8hjhc4sletejqb75t912l49g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFBxbL2bydQJBwqdPhDsG1wHskR3Eco-4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
