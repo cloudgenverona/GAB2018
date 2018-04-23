@@ -1,0 +1,7 @@
+﻿http://globalbootcamp.azurewebsites.net/api/sampledata/RaiseError
+
+http://globalbootcamp.azurewebsites.net/api/sampledata/MyMetric
+
+http://globalbootcamp.azurewebsites.net/api/sampledata/HttpCalls
+
+https://dev.applicationinsights.io/apiexplorer/
