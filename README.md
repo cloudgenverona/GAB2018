@@ -23,7 +23,7 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
 | Scalare le proprie applicazioni con Azure Functions | [Materiale][LinkFunctions] |
 | I Containers in Azure, light-VM o un vero cambio di paradigma? | [Materiale][LinkContainers] |
 | Azure Active Directory: hybrid identity & security |  |
-| Microsoft Flow VS Azure Logic Apps & Azure Functions |  |
+| Microsoft Flow VS Azure Logic Apps & Azure Functions | [Materiale][LinkFlow] |
 | Azure Cosmos DB - Un moderno database nel cloud | [Materiale][LinkCosmosDB] |
 | Continuous Deployment to Azure App Service with Visual Studio Team Services | [Materiale][LinkVSTS] |
 
@@ -39,3 +39,4 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
    [LinkLinuxAltraMetaDelCielo]: <https://github.com/CloudGenVR/GAB2018/tree/master/LinuxAltraMetaDelCielo>
    [LinkML]: <https://github.com/CloudGenVR/GAB2018/tree/master/Machine%20Learning>
    [LinkPresentazioneIniziale]: <https://github.com/CloudGenVR/GAB2018/tree/master/Presentazione_Sconti>
+   [LinkFlow]: <https://github.com/CloudGenVR/GAB2018/tree/master/Flow>
