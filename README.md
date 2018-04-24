@@ -7,4 +7,4 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
 
 | Sessione | Materiale |
 | ------ | ------ |
-| Azure State of the art | [Keynote] |
+| Azure State of the art | [Keynote/] |
