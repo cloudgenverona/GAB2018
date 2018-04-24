@@ -30,7 +30,7 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
    [LinkKeynote]: <https://github.com/CloudGenVR/GAB2018/tree/master/Keynote>
    [LinkAppCenter]: <https://github.com/CloudGenVR/GAB2018/tree/master/AppCenter>
    [LinkAppInsight]: <https://github.com/CloudGenVR/GAB2018/tree/master/AppInsight>
-   [LinkIoT]: <https://github.com/CloudGenVR/GAB2018/tree/master/Azure IoTHub>
+   [LinkIoT]: <https://github.com/CloudGenVR/GAB2018/tree/master/Azure%20IoTHub>
    [LinkFunctions]: <https://github.com/CloudGenVR/GAB2018/tree/master/AzureFunctions>
    [LinkFabric]: <https://github.com/CloudGenVR/GAB2018/tree/master/AzureServiceFabric_AkkaNet>
    [LinkContainers]: <https://github.com/CloudGenVR/GAB2018/tree/master/Containers>
