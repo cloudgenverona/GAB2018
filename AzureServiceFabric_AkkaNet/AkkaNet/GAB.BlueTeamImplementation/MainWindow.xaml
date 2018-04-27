@@ -1,0 +1,85 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GAB.BlueTeamImplementation"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="GAB.BlueTeamImplementation.MainWindow"
+        mc:Ignorable="d"
+        Title="BlueTeam" Height="314.4" Width="633.2"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD1D1D1" Offset="0"/>
+                <GradientStop Color="#FFFAFAFA" Offset="0.984"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Margin="20,34,381.4,0" Height="128" VerticalAlignment="Top">
+            <Frame Content="Paperone" HorizontalAlignment="Left" Height="127" Margin="0,0,-31,-46" VerticalAlignment="Top" Width="218">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE0FFD9"/>
+                        <GradientStop Color="#FF88FF6D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+
+            <Button Content="DEPOSIT" Command="{Binding Deposit}" HorizontalAlignment="Left" Height="38" Margin="122,23,0,0" VerticalAlignment="Top" Width="76"/>
+            <Button Content="WITHDRAW" Command="{Binding Withdraw}" HorizontalAlignment="Left" Height="38" Margin="122,66,0,0" VerticalAlignment="Top" Width="76"/>
+
+            <syncfusion:CurrencyTextBox CurrencyGroupSeparator="," CurrencyDecimalSeparator="." CurrencySymbol="$" HorizontalAlignment="Left" Height="23" Margin="11,52,0,0" TextWrapping="Wrap"  Value="{Binding AmountToProcess}" VerticalAlignment="Top" Width="72"/>
+
+
+        </Grid>
+        <Grid Margin="20,167,0,0" HorizontalAlignment="Left" Width="196" Height="106" VerticalAlignment="Top">
+            <Frame Content="QUI" Margin="0,10,0,0" HorizontalAlignment="Right" Width="196">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFCFFD9"/>
+                        <GradientStop Color="#FFE7FF6D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <syncfusion:CurrencyTextBox CurrencyGroupSeparator="," CurrencyDecimalSeparator="." CurrencySymbol="$" Height="53" Margin="21,30,21,0" TextWrapping="Wrap" Text="CurrencyTextBox" Value="{Binding QuiUI.Amount}" VerticalAlignment="Top" IsEnabled="False" IsUndoEnabled="False" FontSize="36" FontWeight="Medium" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid Margin="221,167,0,0" HorizontalAlignment="Left" Width="196" Height="106" VerticalAlignment="Top">
+            <Frame Content="QUO" Margin="0,10,0,0" HorizontalAlignment="Right" Width="196">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFCFFD9"/>
+                        <GradientStop Color="#FFE7FF6D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <syncfusion:CurrencyTextBox CurrencyGroupSeparator="," CurrencyDecimalSeparator="." CurrencySymbol="$" Height="53" Margin="21,30,21,0" TextWrapping="Wrap" Text="CurrencyTextBox" Value="{Binding QuoUI.Amount}" VerticalAlignment="Top" IsEnabled="False" IsUndoEnabled="False" FontSize="36" FontWeight="Medium" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid Margin="422,167,0,0" HorizontalAlignment="Left" Width="196" Height="106" VerticalAlignment="Top">
+            <Frame Content="QUA" Margin="0,10,0,0" HorizontalAlignment="Right" Width="196">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFCFFD9"/>
+                        <GradientStop Color="#FFE7FF6D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <syncfusion:CurrencyTextBox CurrencyGroupSeparator="," CurrencyDecimalSeparator="." CurrencySymbol="$" Height="53" Margin="21,30,21,0" TextWrapping="Wrap" Text="CurrencyTextBox" Value="{Binding QuaUI.Amount}" VerticalAlignment="Top" IsEnabled="False" IsUndoEnabled="False" FontSize="36" FontWeight="Medium" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid Margin="401,34,0.4,0" Height="128" VerticalAlignment="Top">
+            <Frame Content="Banca" HorizontalAlignment="Left" Height="127" Margin="0,0,-31,-46" VerticalAlignment="Top" Width="218">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD9EEFF"/>
+                        <GradientStop Color="#FF6D8AFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <syncfusion:CurrencyTextBox CurrencyGroupSeparator="," CurrencyDecimalSeparator="." CurrencySymbol="$" Height="53" Margin="36,44,36,0" TextWrapping="Wrap" Text="CurrencyTextBox" Value="{Binding PaperoneBankAccountUi.Balance}" VerticalAlignment="Top" IsEnabled="False" IsUndoEnabled="False" FontSize="36" FontWeight="Medium" HorizontalContentAlignment="Center"/>
+
+
+        </Grid>
+    </Grid>
+</Window>
