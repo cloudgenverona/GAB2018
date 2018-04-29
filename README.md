@@ -13,7 +13,7 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
 | Azure SQL Database |  |
 | Introduzione a Azure Data Lake |  |
 | Introduzione al Machine Learning con Azure | [Materiale][LinkML] |
-| Skype for Business vs Teams |  |
+| Skype for Business vs Teams | [Materiale][LinkTeams] |
 | Linux@Azure, l'altra metà del cielo | [Materiale][LinkLinuxAltraMetaDelCielo] |
 | SQL Server & GDPR |  |
 | Introduzione a Visual Studio App Center | [Materiale][LinkAppCenter] |
@@ -22,7 +22,7 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
 | ActorModel integrato con Akka.Net e Azure Service Fabric | [Materiale][LinkFabric] |
 | Scalare le proprie applicazioni con Azure Functions | [Materiale][LinkFunctions] |
 | I Containers in Azure, light-VM o un vero cambio di paradigma? | [Materiale][LinkContainers] |
-| Azure Active Directory: hybrid identity & security |  |
+| Azure Active Directory: hybrid identity & security | [Materiale][LinkAAD]  |
 | Microsoft Flow VS Azure Logic Apps & Azure Functions | [Materiale][LinkFlow] |
 | Azure Cosmos DB - Un moderno database nel cloud | [Materiale][LinkCosmosDB] |
 | Continuous Deployment to Azure App Service with Visual Studio Team Services | [Materiale][LinkVSTS] |
@@ -40,3 +40,5 @@ In questo repository trovate il materiale dell'ultimo Global Azure Bootcamp (21/
    [LinkML]: <https://github.com/CloudGenVR/GAB2018/tree/master/Machine%20Learning>
    [LinkPresentazioneIniziale]: <https://github.com/CloudGenVR/GAB2018/tree/master/Presentazione_Sconti>
    [LinkFlow]: <https://github.com/CloudGenVR/GAB2018/tree/master/Flow>
+   [LinkAAD]: <https://github.com/CloudGenVR/GAB2018/tree/master/AAD>
+   [LinkTeams]: <https://github.com/CloudGenVR/GAB2018/tree/master/Teams>
